@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xilften</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            background-color: #141414;
+            background-image: radial-gradient(circle, rgba(29, 29, 29, 1) 0%, rgba(15, 15, 15, 1) 100%);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-header {
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', cursive;
+            color: #E50914;
+            font-size: 3.8rem;
+            margin: 0;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #E50914;
+            font-family: 'Bebas Neue', cursive;
+            font-weight: 700;
+            font-size: 1.3rem;
+            cursor: default;
+            user-select: none;
+        }
+
+        .user-avatar {
+            width: 38px;
+            height: 38px;
+            background-color: #E50914;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: white;
+            text-transform: uppercase;
+            box-shadow: 0 0 6px rgba(229, 9, 20, 0.7);
+        }
+
+        .media-container {
+            padding: 0 0 50px 0;
+        }
+
+        .genre-section {
+            margin-bottom: 50px;
+        }
+
+        .genre-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-left: 60px;
+        }
+
+        .movies-row {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-left: 60px;
+            padding-bottom: 25px;
+
+            scrollbar-width: thin;
+            scrollbar-color: #222 #111;
+        }
+
+        .movies-row::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .movies-row::-webkit-scrollbar-track {
+            background: #111;
+            border-radius: 4px;
+        }
+
+        .movies-row::-webkit-scrollbar-thumb {
+            background-color: #333;
+            border-radius: 4px;
+        }
+
+        .movies-row::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        .movie-poster {
+            position: relative;
+
+            flex: 0 0 auto;
+            width: 180px;
+            margin-right: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            background-color: #222;
+        }
+
+        .movie-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .movie-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 10px 10px 10px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .movie-poster:hover {
+            transform: scale(1.1);
+            z-index: 20;
+            box-shadow: 0px 10px 30px rgba(229, 9, 20, 0.4);
+        }
+
+        .movie-poster:hover .movie-title {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1 class="logo">Xilften</h1>
+        <div class="user-info">
+            <div class="user-avatar">G</div>
+            <span class="user-greeting">Olá Guilherme</span>
+        </div>
+    </header>
+    <main class="media-container">
+        <section class="genre-section">
+            <h2 class="genre-title">Fantasia</h2>
+            <div class="movies-row">
+                <div class="movie-poster">
+                    <img src="https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/92/91/32/20224832.jpg"
+                        alt="O Senhor dos Anéis" />
+                    <div class="movie-title">O Senhor dos Anéis: A Sociedade do Anel</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://www.themoviedb.org/t/p/original/qITtoZJxNj82ZwXUoLrqaYWUkop.jpg" alt="O Labirinto do Fauno" />
+                    <div class="movie-title">O Labirinto do Fauno</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://media.fstatic.com/Q0VmHK2SGiBSpFDeI9RO7xNlBgM=/290x478/smart/media/movies/covers/2014/08/a-viagem-de-chihiro_t1246_22.jpg"
+                        alt="A Viagem de Chihiro" />
+                    <div class="movie-title">A Viagem de Chihiro</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/16/b6/d7/16b6d7f380f2b22c284662bc84bed10c.jpg" alt="Stardust" />
+                    <div class="movie-title">Stardust: O Mistério da Estrela</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/ec/f5/96/ecf596b4b836dba11873a07b12381088.jpg" alt="O Castelo Animado" />
+                    <div class="movie-title">O Castelo Animado</div>
+                </div>
+            </div>
+        </section>
+        <section class="genre-section">
+            <h2 class="genre-title">Suspense</h2>
+            <div class="movies-row">
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/63/9c/b0/639cb0575db3273c74cbeb18bf0f3c5c.jpg" alt="O Silêncio dos Inocentes" />
+                    <div class="movie-title">O Silêncio dos Inocentes</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/04/ce/09/04ce09f9cd0cd3580b532226b3d59074.jpg" alt="Fragmentado" />
+                    <div class="movie-title">Fragmentado</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/e1/f9/a0/e1f9a0e21bfa396063294ec275813401.jpg" alt="Corra!" />
+                    <div class="movie-title">Corra!</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/1200x/1c/0b/a5/1c0ba5772791d59ca905f7a24c226f1a.jpg" alt="Um Contratempo" />
+                    <div class="movie-title">Um Contratempo</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/3f/bf/ce/3fbfcebaa672e207440f5c282b3867ed.jpg" alt="O Sexto Sentido" />
+                    <div class="movie-title">O Sexto Sentido</div>
+                </div>
+            </div>
+        </section>
+        <section class="genre-section">
+            <h2 class="genre-title">Terror</h2>
+            <div class="movies-row">
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/31/6e/2d/316e2d9780b0d1f928e5eaa0abcc954a.jpg" alt="Hereditário" />
+                    <div class="movie-title">Hereditário</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/99/cc/ca/99ccca3378accb2c9c43f444d00bd196.jpg" alt="Invocação do Mal" />
+                    <div class="movie-title">Invocação do Mal</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/83/53/d7/8353d7d021bdbc31c0508f1c83492047.jpg" alt="Um Lugar Silencioso" />
+                    <div class="movie-title">Um Lugar Silencioso</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/1200x/17/e6/98/17e69803da55feabb54b371d9eaa23c6.jpg" alt="Panico" />
+                    <div class="movie-title">Panico</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/f9/3c/3c/f93c3c357262325636e65ae7f78df10c.jpg" alt="it a coisa" />
+                    <div class="movie-title">it a coisa</div>
+                </div>
+            </div>
+        </section>
+        <section class="genre-section">
+            <h2 class="genre-title">Drama</h2>
+            <div class="movies-row">
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/d3/78/93/d37893da1faf78ffbb11e125e3ca7abf.jpg" alt="Ainda Estou Aqui" />
+                    <div class="movie-title">Ainda Estou Aqui</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/1200x/c8/85/1d/c8851d84198fb054cb40a9cdf936d18a.jpg" alt="O Poderoso Chefão" />
+                    <div class="movie-title">O Poderoso Chefão</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/e7/9b/b9/e79bb92d4f12ce35a8824b6dd45c84c9.jpg" alt="extraordinario" />
+                    <div class="movie-title">extraordinario</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/e2/f1/9f/e2f19fc30ad277aa930336abcb3b6b8a.jpg" alt="um sonho de liberdade" />
+                    <div class="movie-title">um sonho de liberdade</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/1200x/8e/d7/a9/8ed7a9baeae932abec095d109d306fb3.jpg" alt="Forrest Gump" />
+                    <div class="movie-title">Forrest Gump</div>
+                </div>
+            </div>
+        </section>
+        <section class="genre-section">
+            <h2 class="genre-title">Comédia</h2>
+            <div class="movies-row">
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/26/04/f4/2604f40213f3115e3c1219d58e08da21.jpg" alt="Tempos Modernos" />
+                    <div class="movie-title">Tempos Modernos</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/b1/4b/95/b14b95148f0d1555f0d6c328c23145f5.jpg" alt="gente grande" />
+                    <div class="movie-title">gente grande</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/e2/f8/bf/e2f8bf562b944eec63fc54377d1fce81.jpg" alt="Dr. Dolittle" />
+                    <div class="movie-title">Dr. Dolittle</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/1f/35/59/1f35591f4bdc22cefc633f98021ac027.jpg" alt="Se Beber, Não Case!" />
+                    <div class="movie-title">Se Beber, Não Case!</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/e4/71/2a/e4712ae58795ab898ba239df75db673a.jpg" alt="As Branquelas" />
+                    <div class="movie-title">As Branquelas</div>
+                </div>
+            </div>
+        </section>
+        <section class="genre-section">
+            <h2 class="genre-title">Ficção Científica</h2>
+            <div class="movies-row">
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/1200x/4b/1c/ab/4b1cab19aed05183b61c11e399b53833.jpg" alt="Blade Runner 2049" />
+                    <div class="movie-title">Blade Runner 2049</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/8b/ed/2d/8bed2d8a691e79f4b007ad9a5f0f221f.jpg" alt="A Chegada" />
+                    <div class="movie-title">A Chegada</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/3f/09/dd/3f09ddcc1d3c3740f6a74e63d57fba61.jpg" alt="Interestelar" />
+                    <div class="movie-title">Interestelar</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/736x/0a/16/60/0a1660d44d57e3c84a6a3dfb7ed66aaa.jpg" alt="Matrix" />
+                    <div class="movie-title">Matrix</div>
+                </div>
+                <div class="movie-poster">
+                    <img src="https://i.pinimg.com/1200x/6a/ca/58/6aca58c43f149d1016587ad7fbedc621.jpg" alt="Duna" />
+                    <div class="movie-title">Duna</div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+""

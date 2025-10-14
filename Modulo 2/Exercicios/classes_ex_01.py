@@ -1,7 +1,7 @@
 class AnimaisMarinhos():
-    def __init__(self, tem_escamas, especie, nome, habitat, tamanho):
+    def __init__(self, tem_escamas, espécie, nome, habitat, tamanho):
         self.tem_escamas = tem_escamas
-        self.especie = especie
+        self.espécie = espécie
         self.nome = nome
         self.habitat = habitat
         self.tamanho = tamanho
@@ -10,7 +10,7 @@ class AnimaisMarinhos():
         return print(f'{self.nome} está vivendo pacificamente no {self.habitat}.')
 
     def nadar(self):
-        return print(f'{self.nome} ({self.especie}) está nadando alegremente!')
+        return print(f'{self.nome} ({self.espécie}) está nadando alegremente!')
 
     def apresentar(self):
         escamas = 'tem escamas' if self.tem_escamas else 'não tem escamas'
@@ -21,3 +21,6 @@ class AnimaisMarinhos():
 
     def dormir(self):
         return print(f'{self.nome} está descansando no {self.habitat} após um longo dia.')
+    
+    def fazer_som(self):
+        return print("glupp, glupp...")

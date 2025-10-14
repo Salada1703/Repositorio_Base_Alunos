@@ -6,6 +6,8 @@ class Pássaro():
         self.sexo = sexo
         self.habitat= habitat
 
+    def fazer_som(self):
+        return print(f'craaaaaa craaa craaa')
     def cantar(self):
         return print(f'Sou um {self.espécie} cantando uma bela canção')
 

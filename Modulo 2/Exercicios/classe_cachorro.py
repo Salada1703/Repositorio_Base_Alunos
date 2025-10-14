@@ -1,4 +1,4 @@
-from classepy import Animal
+from Exercicios.classe_animal import Animal
 from classes_ex_03 import Pessoa
 from classe_gato import Gato
 

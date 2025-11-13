@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor de Dólar 💵</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 40px;
+      width: 380px;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff, 0 0 30px #00ffff77;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+      animation: pulse 2s infinite alternate;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      text-align: center;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    input[type="number"]:focus {
+      box-shadow: 0 0 10px #00ffff;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    button {
+      width: 100%;
+      background: linear-gradient(90deg, #00ffff, #007bff);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #00ffff;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 25px #00ffff, 0 0 40px #007bff;
+      background: linear-gradient(90deg, #007bff, #00ffff);
+    }
+
+    .resultado {
+      margin-top: 25px;
+      font-size: 1.3rem;
+      color: #00ffae;
+      background: rgba(0, 255, 174, 0.1);
+      border: 1px solid rgba(0, 255, 174, 0.3);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00ffae55;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    @keyframes pulse {
+      from { text-shadow: 0 0 10px #00ffff, 0 0 30px #00ffff77; }
+      to { text-shadow: 0 0 20px #00ffff, 0 0 50px #00ffffaa; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 0.8rem;
+      color: #aaa;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Conversor de Dólar 💵</h1>
+
+    <form method="get" action="/">
+      <input type="number" name="valor1" placeholder="Digite o valor em reais" step="0.01" required>
+      <button type="submit">Converter</button>
+    </form>
+
+    {% if resultado %}
+      <div class="resultado">
+        <p><strong>R$ {{ valor1 }}</strong> equivalem a <strong>US$ {{ '%.2f'|format(valor1 / 5.29) }}</strong></p>
+      </div>
+    {% endif %}
+
+  </div>
+</body>
+</html>
